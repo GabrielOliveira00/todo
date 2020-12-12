@@ -1,30 +1,43 @@
-var addTask = document.querySelector("adiciona-task");
+var addTask = document.querySelector(".adicionaTask");
 
-addTask.addEventListener("click", function(event)){
-
-
+  addTask.addEventListener("click", function(event) {
   event.preventDefault();
 
+  var task = document.querySelector(".mb-3");
+
+  var tarefa = addToDo(task);
+
+  var inputTask = createToDo(tarefa);
+
+  var tabela = document.querySelector(".menuTask");
+
+  tabela.appendChild(inputTask);
+
+  console.log("Task");
 
 
-function obtemTask(task){
+});
 
-  var task = document.querySelector("todo-items");
-   console.log("teste");
+function addToDo(task) {
+    document.getElementById("newTask").value;
 }
 
+
+
+function createToDo(tarefa){
+
+    var inputTask = document.createElement("button");
+    inputTask.classList.add("adicionaTask");
+
+    inputTask.appendChild(montaBotao(tarefa.newTask, "list-group-item list-group-item-action brd-rds"));
+
+    return inputTask;
 }
 
 function montaBotao(dado, classe){
-  var botaoTask = document.createElement("button")
 
-}
-function montaCheckBox(){
-  var checkBotao = document.createElement("input")
-  checkBotao.classList.add("check")
-}
-var conf = confirma
+  var botao = document.createElement("div");
+  botao.classList.add(classe);
+  botao.textContent = dado;
 
-function confirma(teste){
-  addEventListner.button
 }
