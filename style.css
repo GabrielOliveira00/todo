@@ -1,64 +1,82 @@
-body{
-  width: 100%;
+
+body {
+    width: 100%;
+}
+
+.box {
+    margin-right: 10px;
+}
+
+.notes {
+}
+
+/*
+    Item to be cloned, must be hidden
+*/
+#cloneMePlease {
+    display: none;
+}
+
+.todo-items {
+    width: calc(100% - 10%);
+    margin-left: 5%;
+}
+
+.todo-checked span {
+    text-decoration: line-through;
+}
+
+.mb-3 {
+    margin: 20px 0px 0px 0px;
+}
+
+.menu-task:first-child, .menu-task:last-child {
+    border-radius: 3px;
+}
+
+.adiciona-task:hover {
+    background: #cecece;
+}
+
+.check {
+    margin-right: 10px;
+}
+
+.bi-plus-circle {
+    padding-bottom: 2px;
+}
+
+.btn-plus {
+    margin-left: -5px;
+    padding: 2px 2px 0px 2px;
+    border: 0.5px solid black;
+}
+
+.tlt {
+    text-align: center;
+    font-size: 2em;
+    font-family: bolder;
+}
+
+svg {
+    width: 1.2em;
+    height: 1.2em;
 
 }
 
-.box{
-  margin-right: 10px;
-
-}
-.notes{
-
-}
-.todo-items{
-  width: calc(100% - 10%);
-  margin-left: 5%;
-
-}
-.mb-3{
-  margin: 20px 0px 0px 0px;
-
-}
-.menu-task:first-child, .menu-task:last-child{
-  border-radius: 3px;
-}
-.adiciona-task:hover{
-  background: #cecece;
-}
-.check{
-  margin-right: 10px;
-}
-.bi-plus-circle{
-  padding-bottom: 2px;
-}
-.btn-plus{
-  margin-left: -5px;
-  padding: 2px 2px 0px 2px;
-  border: 0.5px solid black;
-}
-.tlt{
-  text-align: center;
-  font-size: 2em;
-  font-family: bolder;
+.linha {
+    display: block;
 }
 
-svg{
-  width: 1.2em;
-  height: 1.2em;
+.bi-trash {
+    position: absolute;
+    right: 10px;
 
-}
-.linha{
-  display: block;
-}
-.bi-trash{
-  position: absolute;
-  right: 10px;
-
-  margin-top: 5px;
-  color: red;
+    margin-top: 5px;
+    color: red;
 
 }
 
-.bi-trash:hover{
-  color: pink;
+.bi-trash:hover {
+    color: pink;
 }
