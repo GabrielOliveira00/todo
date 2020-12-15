@@ -1,33 +1,39 @@
 var addTask = document.querySelector(".adicionaTask");
+addTask.addEventListener("click", function(event) {
+    event.preventDefault();
 
-  addTask.addEventListener("click", function(event) {
-  event.preventDefault();
+    var task = document.querySelector(".todo-items");
 
-  var task = document.querySelector(".mb-3");
+    var tarefa = addToDo(task);
 
-  var tarefa = addToDo(task);
+    var inputTask = createToDo(tarefa);
 
-  var inputTask = createToDo(tarefa);
+    var tabela = document.querySelector(".menuTask");
 
-  var tabela = document.querySelector(".menuTask");
+    tabela.appendChild(inputTask);
 
-  tabela.appendChild(inputTask);
-
-  console.log("Task");
+    console.log("Task");
 
 
 });
 
-function addToDo(task) {
-    document.getElementById("newTask").value;
+function addToDo (task) {
+
+  var tarefa = {
+      newTask: task.newTask.value
+
+  }
+
+  return tarefa;
 }
+
 
 
 
 function createToDo(tarefa){
 
     var inputTask = document.createElement("button");
-    inputTask.classList.add("adicionaTask");
+    inputTask.classList.add("tarefa");
 
     inputTask.appendChild(montaBotao(tarefa.newTask, "list-group-item list-group-item-action brd-rds"));
 
@@ -40,4 +46,34 @@ function montaBotao(dado, classe){
   botao.classList.add(classe);
   botao.textContent = dado;
 
+}
+
+// Exclui To do
+
+var excluir = document.querySelector(".bi-trash");
+
+excluir.addEventListener("dblclick", function(event) {
+    event.target.parentNode.classList.add("fadeOut");
+
+    setTimeout(function() {
+        event.target.parentNode.remove();
+    }, 100);
+
+});
+
+
+// Função Drag and Drop
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
 }
